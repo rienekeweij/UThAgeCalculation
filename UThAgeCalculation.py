@@ -123,10 +123,10 @@ def GetData(fn):
 
 ##############################
 # Extracting parameters
-n_columnsThU, dataThU = GetData("Th230_U238A.txt")
-n_columnsUU, dataUU = GetData("U234_U238A.txt")
+n_columnsThU, dataThU = GetData("data/exampleCaveModel/Th230_U238A.txt")
+n_columnsUU, dataUU = GetData("data/exampleCaveModel/U234_U238A.txt")
 # ca : Control Ages
-n_columnsca, data_ca = GetData("control_ages.txt")
+n_columnsca, data_ca = GetData("data/exampleCaveModel/control_ages.txt")
 
 if ( not CheckDataConsistency(dataThU, dataUU, data_ca) or (n_columnsThU != n_columnsUU) or (n_columnsUU != n_columnsca) ) :
     print("[ERRO] Input data is not formatted as expected. Different number of entries or matrix dimensions ?. Giving up.")
