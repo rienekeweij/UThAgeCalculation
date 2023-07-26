@@ -5,6 +5,7 @@ from math import *
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
+#from myNewtonRaphson import NewtonRaphson
 
 # some constants
 L_230 = 9.15771e-06
@@ -19,7 +20,7 @@ MAX_TRIES_UNSTABLE_SOLUTION = 10
 OUTPUT_FILENAME= "new_ages.txt"
 
 # Newton-Raphson
-def NewtonRahpson(x0, thu, uu, epsilon):
+def NewtonRaphson(x0, thu, uu, epsilon):
 
     # start point
     x = x0
@@ -64,6 +65,7 @@ def NewtonRahpson(x0, thu, uu, epsilon):
         x = newx # prepare next iteration
 
     return newx
+
 
 # Age equation
 def AgesEq(t, thu, uu):
@@ -147,7 +149,7 @@ newControlAges = []
 max = samplesize
 for itr in range(0, max):
     #print("\nStart -> %s, %s, %s"%(startpoint, float(dataThU[itr]), float(dataUU[itr])))
-    newControlAges.append(NewtonRahpson(START_POINT, float(dataThU[itr]), float(dataUU[itr]), EPSILON))
+    newControlAges.append(NewtonRaphson(START_POINT, float(dataThU[itr]), float(dataUU[itr]), EPSILON))
     #print(dataca[itr],newControlAges[itr])
 
 print("[INFO] done with solutions")
